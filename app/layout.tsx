@@ -1,8 +1,10 @@
+import AppHeader from '@/components/widgets/AppHeader'
 import './globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import { Rubik, Spectral } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
+const rubik = Rubik({ subsets: ['latin', 'cyrillic'], variable: '--root-font' })
+const spectral = Spectral({ subsets: ['latin', 'cyrillic'], weight: ['600', '400'], variable: '--second-font' })
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +17,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className={`${rubik.className} ${rubik.variable} ${spectral.variable}`}>
+      <body id='root' className='flex flex-col overflow-x-hidden body_wrapper'>
+        <AppHeader />
+        <div className='max-w-7xl w-full page_wrapper h-full px-4 mx-auto'>
+          {children}
+        </div>
+      </body>
     </html>
   )
 }
