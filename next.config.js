@@ -1,4 +1,11 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {}
-
-module.exports = nextConfig
+const nextConfig = {
+    images: {
+      unoptimized: false,
+      domains: [
+        'cdn.darkmaterial.space'
+      ]
+    }
+  };
+  
+  module.exports = nextConfig;
