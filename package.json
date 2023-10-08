@@ -45,6 +45,7 @@
     "date-fns": "^2.30.0",
     "firebase": "^10.4.0",
     "jsonwebtoken": "8.5.1",
+    "lodash": "^4.17.21",
     "next": "13.5.4",
     "react": "^18",
     "react-day-picker": "^8.8.2",
@@ -56,12 +57,15 @@
     "react-responsive": "^9.0.2",
     "tailwind-merge": "^1.14.0",
     "tailwindcss-animate": "^1.0.7",
+    "uuid": "^9.0.1",
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/lodash": "^4.14.199",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/uuid": "^9.0.5",
     "autoprefixer": "^10",
     "eslint": "^8",
     "eslint-config-next": "13.5.4",
