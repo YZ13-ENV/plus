@@ -1,5 +1,10 @@
 export type SearchResult = ShotSearchResult | NoteSearchResult | EventSearchResult
 
+export type PromoCode = {
+    code: string
+    expiredAt: number
+}
+export type PromoCodeWithId = { id: string } & PromoCode
 export type ShotSearchResult = {
     type: 'shots'
     user: ShortUserData | null
