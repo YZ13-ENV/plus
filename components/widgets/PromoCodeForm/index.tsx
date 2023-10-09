@@ -4,11 +4,13 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { PromoCodeWithId } from '@/types'
 import { auth } from '@/utils/app'
+import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { useAuthState } from 'react-firebase-hooks/auth'
 import { BiLoaderAlt } from 'react-icons/bi'
 
 const PromoCodeForm = () => {
+    const router = useRouter()
     const [user] = useAuthState(auth)
     const [code, setCode] = useState<string>('')
     const [loading, setLoading] = useState<boolean>(false)
@@ -19,7 +21,7 @@ const PromoCodeForm = () => {
             const existedCode: PromoCodeWithId | null = await checkCode(code)
             if (existedCode) {
                 const res = await activateCodeAndDelete(existedCode.code, user.uid)
-                console.log(res)
+                if (res) router.push('/promo/activate/success')
             }
             setLoading(false)
         }
