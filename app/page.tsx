@@ -1,3 +1,4 @@
+import AdviceCard from "@/components/shared/AdviceCard";
 import Image from "next/image";
 
 export default function Home() {
@@ -10,30 +11,14 @@ export default function Home() {
               <span className="text-2xl font-semibold text-neutral-300">bum</span>
             </div>
             <div className="w-full h-full flex items-center gap-2 justify-start">
-              <div className="h-full relative w-1/4 rounded-2xl flex gap-2 flex-col bg-neutral-900">
-                <div className="p-3 z-10 backdrop-blur-sm rounded-2xl">
-                  <span className="text-xl font-medium text-neutral-200">Ambient подсветка для работ</span>
-                </div>
-                <div className="absolute w-full h-full rounded-2xl overflow-hidden">
-                  <Image src='/shot_preview.png' fill className="object-cover" alt='ambient-preview' />
-                </div>
-                {/* <span className="text-neutral-300">на bum</span> */}
-              </div>
-              <div className="h-full relative w-1/4 rounded-2xl flex gap-2 flex-col bg-neutral-900">
-                <div className="p-3 z-10 backdrop-blur-sm rounded-2xl">
-                  <span className="text-xl font-medium text-neutral-800">Реакции под комментариями</span>
-                </div>
-                <div className="absolute w-full h-full rounded-2xl overflow-hidden">
-                  <video className="object-cover h-full" autoPlay loop src="/reactions.mp4" />
-                </div>
-              </div>
-              <div className="h-full relative w-1/4 rounded-2xl flex gap-2 flex-col bg-neutral-900">
-                <div className="p-3 z-10">
-                  <span className="text-xl font-medium text-neutral-200">В два раза больше медиа блоков</span>
-                </div>
-                <div className="w-full h-full flex items-center justify-center"><span className="text-9xl font-bold">x2</span></div>
-              </div>
-              {/* <div className="h-full w-1/4 rounded-2xl flex flex-col p-3 bg-neutral-900"></div> */}
+              <AdviceCard title={<span className="text-xl font-medium text-neutral-200">Ambient подсветка для работ</span>} 
+              cover={<Image src='/shot_preview.png' fill className="object-cover" alt='ambient-preview' />} />
+              <AdviceCard title={<span className="text-xl font-medium text-neutral-800">Реакции под комментариями</span>} cover={
+                  <video className="object-cover h-full" autoPlay loop controls={false}>
+                    <source src="/reactions.mp4" />
+                  </video>
+              } />
+              <AdviceCard title={<span className="text-xl font-medium text-neutral-200">В два раза больше медиа блоков</span>} content={<span className="text-9xl font-bold">x2</span>} />
             </div>
           </div>
         </div>
