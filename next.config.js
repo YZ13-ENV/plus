@@ -1,11 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-      unoptimized: false,
-      domains: [
-        'cdn.darkmaterial.space'
-      ]
+        remotePatterns: [
+            {
+                protocol: 'https',
+                hostname: '*'
+            }
+        ]
+    },
+    experimental: {
+        optimizeCss: true,
+        optimizeServerReact: true
     }
   };
-  
+
   module.exports = nextConfig;

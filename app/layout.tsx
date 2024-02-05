@@ -1,36 +1,20 @@
+import 'ui/dist/style.css'
 import './globals.css'
-import AppHeader from '@/components/widgets/AppHeader'
 import type { Metadata } from 'next'
-import { Rubik, Spectral } from 'next/font/google'
-import StateProvider from '@/components/StateProvider'
-import SessionWatcher from '@/components/entities/session/session.watcher'
-import TokenWatcher from '@/components/entities/session/token.watcher'
-
-const rubik = Rubik({ subsets: ['latin', 'cyrillic'], variable: '--root-font' })
-const spectral = Spectral({ subsets: ['latin', 'cyrillic'], weight: ['600', '400'], variable: '--second-font' })
+import { Geologica } from 'next/font/google'
+const first_font = Geologica({ subsets: ['latin', 'cyrillic'], weight: ['600', '500', '400', '300', '200'], variable: '--root-font' })
 
 export const metadata: Metadata = {
-  title: 'DM+',
-  description: 'Управление подпиской DM+',
+  title: 'DM Family',
+  description: 'Created by DM Family',
 }
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  return (
-    <StateProvider>
-      <html lang="en" className={`${rubik.className} ${rubik.variable} ${spectral.variable}`}>
-        <body id='root' className='flex dark flex-col overflow-x-hidden body_wrapper'>
-          <SessionWatcher />
-          <TokenWatcher />
-          <AppHeader />
-          <div className='max-w-5xl w-full page_wrapper h-full px-4 mx-auto'>
-            {children}
-          </div>
+export default function RootLayout({ children }: { children: JSX.Element }) {
+    return (
+      <html lang="en" className={`${first_font.className} ${first_font.variable}`}>
+        <body className='min-h-screen dark'>
+          {children}
         </body>
       </html>
-    </StateProvider>
-  )
+    )
 }
