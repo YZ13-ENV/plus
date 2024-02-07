@@ -44,6 +44,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",
     "cmdk": "^0.2.0",
+    "critters": "^0.0.20",
     "date-fns": "^2.30.0",
     "firebase": "^10.4.0",
     "hooks": "github:yz13-env/hooks",
