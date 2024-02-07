@@ -1,5 +1,5 @@
 import { Button } from '@/components/ui/button'
-import PromoCodeForm from '@/components/widgets/PromoCodeForm'
+import PromoCodeForm from '@/components/widgets/promo-code-form'
 import Link from 'next/link'
 import { BiLeftArrowAlt } from 'react-icons/bi'
 
