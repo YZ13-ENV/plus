@@ -3,8 +3,10 @@ export type SearchResult = ShotSearchResult | NoteSearchResult | EventSearchResu
 export type PromoCode = {
     code: string
     expiredAt: number
+    onlyFor?: string
+    monthCount?: number
 }
-export type PromoCodeWithId = { id: string } & PromoCode
+export type DocPromoCode = { doc_id: string } & PromoCode
 export type ShotSearchResult = {
     type: 'shots'
     user: ShortUserData | null

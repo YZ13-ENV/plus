@@ -1,8 +1,7 @@
 'use client'
-import { activateCodeAndDelete, checkCode } from '@/app/promo/activate/helpers'
+import { plus } from '@/api/plus'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
-import { PromoCodeWithId } from '@/types'
 import { auth } from '@/utils/app'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
@@ -18,9 +17,9 @@ const PromoCodeForm = () => {
         if (user) {
 
             setLoading(true)
-            const existedCode: PromoCodeWithId | null = await checkCode(code)
+            const existedCode = await plus.promocode.get(code)
             if (existedCode) {
-                const res = await activateCodeAndDelete(existedCode.code, user.uid)
+                const res = await plus.promocode.apply(user.uid, existedCode.code)
                 if (res) router.push('/promo/activate/success')
             }
             setLoading(false)

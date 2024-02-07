@@ -1,4 +1,5 @@
-import { format } from '@/helpers/format'
+import { db } from '@/utils/app'
+import { doc, getDoc } from 'firebase/firestore'
 
 export type SubscriptionTableData = {
   key: string
@@ -9,14 +10,6 @@ export type SubscriptionTableData = {
   }
 }
 
+const ref = doc(db, '/dm/global/configs/plus')
+export const table_data = async() => (await getDoc(ref)).get('features') as SubscriptionTableData[] | null
 // Не ломать эту консту, она выводит данные в таблицу привилегий на главной странице
-export const table_data: SubscriptionTableData[] = [
-  {
-    key: format.generateId(10) as string,
-    name: 'Возможность публиковать работы отложено',
-    access: {
-      forDefault: false,
-      forSubscriber: true
-    }
-  }
-]

@@ -3,7 +3,8 @@ import { table_data } from "@/const/plus-table-data";
 import { BiCheck, BiX } from "react-icons/bi";
 import { StarField } from "ui";
 
-export default function Home() {
+export default async function Home() {
+    const fetched_table_data = await table_data()
     return (
       <>
         <StarField />
@@ -20,7 +21,8 @@ export default function Home() {
             </thead>
             <tbody>
               {
-                table_data.map(row =>
+                fetched_table_data &&
+                fetched_table_data.map(row =>
                   <tr key={row.key} className="h-12 border-b">
                     <td>{row.name}</td>
                     <td className="text-muted-foreground">
