@@ -22,8 +22,8 @@ export default async function Home() {
             <tbody>
               {
                 fetched_table_data &&
-                fetched_table_data.map(row =>
-                  <tr key={row.key} className="h-12 border-b">
+                fetched_table_data.map((row, i) =>
+                  <tr key={row.key + '-' + i} className="h-12 border-b">
                     <td>{row.name}</td>
                     <td className="text-muted-foreground">
                       {
