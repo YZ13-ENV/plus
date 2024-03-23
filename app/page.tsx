@@ -1,17 +1,17 @@
 import Header from "@/components/widgets/header";
 import { table_data } from "@/const/plus-table-data";
 import { BiCheck, BiX } from "react-icons/bi";
-import { StarField } from "ui";
 
 export default async function Home() {
-    const fetched_table_data = await table_data()
-    return (
-      <>
-        <StarField />
-        <Header />
-        <main className='w-full max-w-7xl mx-auto h-full flex flex-col gap-4 px-6 my-12'>
-          <span className='text-4xl font-bold my-12'>Что вам даст плюс?</span>
-          <table>
+  const fetched_table_data = await table_data()
+  return (
+    <>
+      {/* <StarField /> */}
+      <Header />
+      <main className='w-full max-w-7xl mx-auto h-full flex flex-col gap-4 px-6 my-12'>
+        <span className='text-4xl font-bold my-12'>Что вам даст плюс?</span>
+        <div className="w-full rounded-2xl bg-muted p-6">
+          <table className="w-full">
             <thead>
               <tr className="text-muted-foreground">
                 <td className="text-sm">Название</td>
@@ -28,15 +28,15 @@ export default async function Home() {
                     <td className="text-muted-foreground">
                       {
                         row.access.forDefault
-                        ? <BiCheck className='mx-auto' size={24} />
-                        : <BiX className='mx-auto' size={24} />
+                          ? <BiCheck className='mx-auto' size={24} />
+                          : <BiX className='mx-auto' size={24} />
                       }
                     </td>
                     <td className="text-muted-foreground">
                       {
                         row.access.forSubscriber
-                        ? <BiCheck className='mx-auto' size={24} />
-                        : <BiX className='mx-auto' size={24} />
+                          ? <BiCheck className='mx-auto' size={24} />
+                          : <BiX className='mx-auto' size={24} />
                       }
                     </td>
                   </tr>
@@ -44,7 +44,9 @@ export default async function Home() {
               }
             </tbody>
           </table>
-        </main>
-      </>
-    )
+        </div>
+
+      </main>
+    </>
+  )
 }

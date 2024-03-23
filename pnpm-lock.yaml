@@ -121,7 +121,7 @@ dependencies:
     version: 10.4.0
   hooks:
     specifier: github:yz13-env/hooks
-    version: github.com/yz13-env/hooks/c3bc70464a3c91f1c8001a28fa131dbd12dbc1ae(react-dom@18.2.0)(react@18.2.0)
+    version: github.com/yz13-env/hooks/41a3bcb4555ca9261af8415427a94310f4498657(react-dom@18.2.0)(react@18.2.0)
   jsonwebtoken:
     specifier: 8.5.1
     version: 8.5.1
@@ -135,13 +135,13 @@ dependencies:
     specifier: 14.1.0
     version: 14.1.0(react-dom@18.2.0)(react@18.2.0)
   react:
-    specifier: ^18
+    specifier: ^18.2.0
     version: 18.2.0
   react-day-picker:
     specifier: ^8.8.2
     version: 8.8.2(date-fns@2.30.0)(react@18.2.0)
   react-dom:
-    specifier: ^18
+    specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
   react-firebase-hooks:
     specifier: ^5.1.1
@@ -185,34 +185,34 @@ devDependencies:
     specifier: ^3.3.2
     version: 3.3.2
   '@types/node':
-    specifier: ^20
+    specifier: ^20.8.3
     version: 20.8.3
   '@types/react':
-    specifier: ^18
+    specifier: ^18.2.25
     version: 18.2.25
   '@types/react-dom':
-    specifier: ^18
+    specifier: ^18.2.11
     version: 18.2.11
   '@types/uuid':
     specifier: ^9.0.5
     version: 9.0.5
   autoprefixer:
-    specifier: ^10
+    specifier: ^10.4.16
     version: 10.4.16(postcss@8.4.31)
   eslint:
-    specifier: ^8
+    specifier: ^8.51.0
     version: 8.51.0
   eslint-config-next:
     specifier: 13.5.4
     version: 13.5.4(eslint@8.51.0)(typescript@5.2.2)
   postcss:
-    specifier: ^8
+    specifier: ^8.4.31
     version: 8.4.31
   tailwindcss:
-    specifier: ^3
+    specifier: ^3.3.3
     version: 3.3.3
   typescript:
-    specifier: ^5
+    specifier: ^5.2.2
     version: 5.2.2
 
 packages:
@@ -6003,8 +6003,8 @@ packages:
     resolution: {integrity: sha512-Nlfjc+k9cIWpOMv7XufF0Mv09TAXSemNAuAqFLaOwTcN+RvhvYTDtVLSp9D9r+5I097fYs1Vf/UYwH2xEpkFfQ==}
     dev: false
 
-  /lib0@0.2.91:
-    resolution: {integrity: sha512-LRcTp8RmdHexL8olb7qErdROnJ2L6Js5Am99WQo0hiTRDWtk6vyUJJjTB6I/RcW8jwNQshM3NqH598DdhSOajA==}
+  /lib0@0.2.93:
+    resolution: {integrity: sha512-M5IKsiFJYulS+8Eal8f+zAqf5ckm1vffW0fFDxfgxJ+uiVopvDdd3PxJmz0GsVi3YNO7QCFSq0nAsiDmNhLj9Q==}
     engines: {node: '>=16'}
     hasBin: true
     dependencies:
@@ -8048,7 +8048,7 @@ packages:
     resolution: {integrity: sha512-D+7KcUr0j+vBCUSKXXEWfA+bG4UQBviAwP3gYBhkstkgwy5+8diOPMx0iqLIOxNo/HxaREUimZRxqHGAHCL2BQ==}
     engines: {node: '>=16.0.0', npm: '>=8.0.0'}
     dependencies:
-      lib0: 0.2.91
+      lib0: 0.2.93
     dev: false
 
   /yocto-queue@0.1.0:
@@ -8090,18 +8090,44 @@ packages:
       - sass
     dev: false
 
-  github.com/yz13-env/hooks/c3bc70464a3c91f1c8001a28fa131dbd12dbc1ae(react-dom@18.2.0)(react@18.2.0):
-    resolution: {tarball: https://codeload.github.com/yz13-env/hooks/tar.gz/c3bc70464a3c91f1c8001a28fa131dbd12dbc1ae}
-    id: github.com/yz13-env/hooks/c3bc70464a3c91f1c8001a28fa131dbd12dbc1ae
+  github.com/yz13-env/api/1333e82803a7e238699d520936cb0a998c6adbc7(react-dom@18.2.0)(react@18.2.0):
+    resolution: {tarball: https://codeload.github.com/yz13-env/api/tar.gz/1333e82803a7e238699d520936cb0a998c6adbc7}
+    id: github.com/yz13-env/api/1333e82803a7e238699d520936cb0a998c6adbc7
+    name: '@darkmaterial/api'
+    version: 0.0.9-a-2
+    engines: {node: '20'}
+    peerDependencies:
+      react: '18'
+      react-dom: '18'
+    dependencies:
+      ahooks: 3.7.10(react@18.2.0)
+      firebase: 10.8.0
+      jsonwebtoken: 8.5.1
+      luxon: 3.4.4
+      next: 13.5.6(react-dom@18.2.0)(react@18.2.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
+      react-firebase-hooks: 5.1.1(firebase@10.8.0)(react@18.2.0)
+    transitivePeerDependencies:
+      - '@babel/core'
+      - '@opentelemetry/api'
+      - '@react-native-async-storage/async-storage'
+      - babel-plugin-macros
+      - sass
+    dev: false
+
+  github.com/yz13-env/hooks/41a3bcb4555ca9261af8415427a94310f4498657(react-dom@18.2.0)(react@18.2.0):
+    resolution: {tarball: https://codeload.github.com/yz13-env/hooks/tar.gz/41a3bcb4555ca9261af8415427a94310f4498657}
+    id: github.com/yz13-env/hooks/41a3bcb4555ca9261af8415427a94310f4498657
     name: hooks
-    version: 0.0.3
+    version: 0.0.4
     engines: {node: '20'}
     peerDependencies:
       react: '18'
       react-dom: '18'
     dependencies:
       ahooks: 3.7.8(react@18.2.0)
-      api: github.com/yz13-env/api/0a14b86148cf30bb5c7cc198042c8cdd33cec90c(react-dom@18.2.0)(react@18.2.0)
+      api: github.com/yz13-env/api/1333e82803a7e238699d520936cb0a998c6adbc7(react-dom@18.2.0)(react@18.2.0)
       firebase: 10.8.0
       jsonwebtoken: 8.5.1
       luxon: 3.4.4
